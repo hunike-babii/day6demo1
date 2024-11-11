@@ -2,7 +2,8 @@
     <div>
         <div class="header">
             <div>
-                <input type="text" placeholder="搜索" />
+                <input type="text" v-model="search" placeholder="搜索" />
+                <button @click="$emit('searchNews',search)">搜索</button>
             </div>
             <div>
                 <button @click="$emit('showAddDia',true)">添加</button>
@@ -37,7 +38,7 @@
         props: ['list'],
         data() {
             return {
-
+                search: ''
             }
         }
     }
@@ -47,9 +48,12 @@
     .header {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 10px;
     }
     table {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid #000;
     }
     th {
         border: 1px solid #000;

@@ -1,6 +1,6 @@
 <template>
   <div>
-     <NewsComponent @showAddDia="showAddDia" :list="list" @edit="edit" @del="del"/>
+     <NewsComponent @showAddDia="showAddDia" :list="filterList" @edit="edit" @del="del" @searchNews="search=$event"/>
      <AddEditDia ref="Dia" @editNewsData="editNewsData" @changeNewsData="changeNewsData"/>
   </div>
 </template>
@@ -16,6 +16,7 @@
     data() {
       return {
         no: 0,
+        search: '',
         list: [
             {
                 id: 1,
@@ -65,6 +66,11 @@
         if (index !== -1) {
           this.list.splice(index, 1);
         }
+      }
+    },
+    computed: {
+      filterList() {
+        return this.list.filter(v => v.title.includes(this.search))
       }
     }
   }

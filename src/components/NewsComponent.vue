@@ -20,8 +20,8 @@
                 <td>{{ item.title }}</td>
                 <td>{{ item.content }}</td>
                 <td>
-                    <button @click="edit(item)">编辑</button>
-                    <button @click="del(item)">删除</button>
+                    <button @click="$emit('edit',item)">编辑</button>
+                    <button @click="$emit('del',item)">删除</button>
                 </td>
             </tr>
         </table>
@@ -33,7 +33,7 @@
         props: ['list'],
         data() {
             return {
-                
+
             }
         }
     }

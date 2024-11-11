@@ -3,7 +3,7 @@
         <div v-if="visible">
             <input type="text" v-model="title" placeholder="标题" />
             <input type="text" v-model="content" placeholder="内容" />
-            <button @click="confirm">确定</button>
+            <button @click="sendNewsData">确定</button>
             <button @click="closeDia">取消</button>
         </div>
     </div>
@@ -21,6 +21,10 @@
             }
         },
         methods: {
+            sendNewsData() {
+                this.$emit('sendNewsData', {title: this.title, content: this.content})
+                this.closeDia()
+            },
             closeDia() {
                 this.visible = false
                 this.id = -1

@@ -30,25 +30,10 @@
 
 <script>
     export default {
+        props: ['list'],
         data() {
             return {
-                list: [
-                    {
-                        id: 1,
-                        title: '娱乐',
-                        content: '娱乐新闻'
-                    },
-                    {
-                        id: 2,
-                        title: '体育',
-                        content: '体育新闻'
-                    },
-                    {
-                        id: 3,
-                        title: '科技',
-                        content: '科技新闻'
-                    }
-                ]
+                
             }
         }
     }

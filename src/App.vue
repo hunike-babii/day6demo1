@@ -1,6 +1,6 @@
 <template>
   <div>
-     <NewsComponent @showAddDia="showAddDia" :list="list" @edit="edit"/>
+     <NewsComponent @showAddDia="showAddDia" :list="list" @edit="edit" @del="del"/>
      <AddEditDia ref="Dia" @editNewsData="editNewsData" @changeNewsData="changeNewsData"/>
   </div>
 </template>
@@ -58,6 +58,12 @@
         if (index !== -1) {
           this.list[index].title = item.title;
           this.list[index].content = item.content;
+        }
+      },
+      del(item) {
+        const index = this.list.findIndex(v => v.id === item.id);
+        if (index !== -1) {
+          this.list.splice(index, 1);
         }
       }
     }

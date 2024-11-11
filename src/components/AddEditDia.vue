@@ -12,8 +12,10 @@
 
 <script>
     export default {
+        emits: ['editNewsData','changeNewsData'],
         data() {
             return {
+
                 type: 1,
                 visible: false,
                 id: null,

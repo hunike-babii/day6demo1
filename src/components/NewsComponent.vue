@@ -35,6 +35,7 @@
 
 <script>
     export default {
+        emits: ['searchNews','edit','del','showAddDia'],
         props: ['list'],
         data() {
             return {
@@ -47,7 +48,7 @@
 <style scoped>
     .header {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-bottom: 10px;
     }
     table {

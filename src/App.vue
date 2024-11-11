@@ -1,7 +1,7 @@
 <template>
   <div>
-     <NewsComponent />
-     <AddEditDia />
+     <NewsComponent @showAddDia="showAddDia"/>
+     <AddEditDia ref="addEditDia"/>
   </div>
 </template>
 
@@ -12,6 +12,11 @@
     components: {
       NewsComponent,
       AddEditDia
+    },
+    methods: {
+      showAddDia(visible) {
+        this.$refs.addEditDia.visible = visible
+      }
     }
   }
 </script>

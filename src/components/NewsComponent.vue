@@ -5,7 +5,7 @@
                 <input type="text" placeholder="搜索" />
             </div>
             <div>
-                <button @click="add">添加</button>
+                <button @click="$emit('showAddDia',true)">添加</button>
             </div>
         </div>
         <table>

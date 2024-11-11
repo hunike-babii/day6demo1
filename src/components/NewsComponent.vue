@@ -9,21 +9,25 @@
             </div>
         </div>
         <table>
-            <tr>
-                <th>序号</th>
-                <th>标题</th>
-                <th>内容</th>
-                <th>操作</th>
-            </tr>
-            <tr v-for="(item, index) in list" :key="item.id">
-                <td>{{ index + 1 }}</td>
-                <td>{{ item.title }}</td>
-                <td>{{ item.content }}</td>
-                <td>
-                    <button @click="$emit('edit',item)">编辑</button>
-                    <button @click="$emit('del',item)">删除</button>
-                </td>
-            </tr>
+            <thead> 
+                <tr>
+                    <th>序号</th>
+                    <th>标题</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in list" :key="item.id">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.content }}</td>
+                    <td>
+                        <button @click="$emit('edit',item)">编辑</button>
+                        <button @click="$emit('del',item)">删除</button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template>

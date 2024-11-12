@@ -1,5 +1,8 @@
 # day6demo1
 
+## 简介
+用vue做的新闻管理
+
 ## Project setup
 ```
 npm install
